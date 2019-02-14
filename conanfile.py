@@ -56,7 +56,7 @@ class LibpqConan(ConanFile):
             self._build_subfolder = os.path.join(self.build_folder, "output")
             args = ['--without-readline']
             args.append('--with-zlib' if self.options.with_zlib else '--without-zlib')
-            args.append('--with-openssl' if self.options.with_openssl else '--without-openssl')            
+            args.append('--with-openssl' if self.options.with_openssl else '--without-openssl')
             with tools.chdir(self._source_subfolder):
                 self._autotools.configure(args=args)
         return self._autotools
